@@ -24,6 +24,9 @@ import {
   Calendar,
 } from "lucide-react";
 
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
 const NGOWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -68,129 +71,7 @@ const NGOWebsite = () => {
 
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
-      {/* Header */}
-      <header
-        className={`fixed w-full z-50 transition-all duration-700 ${
-          isScrolled
-            ? "bg-black/95 backdrop-blur-xl shadow-2xl border-b border-emerald-500/20"
-            : "bg-transparent"
-        }`}
-      >
-        {/* Top Bar */}
-        <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white py-3 px-4 text-sm">
-          <div className="max-w-7xl mx-auto flex justify-between items-center">
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2 hover:scale-105 transition-transform">
-                <Phone size={16} className="animate-pulse" />
-                <span className="font-medium">913-457-3859</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin size={16} />
-                <span>New Delhi, India</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <Facebook
-                size={16}
-                className="hover:text-blue-300 cursor-pointer transition-all hover:scale-125"
-              />
-              <Instagram
-                size={16}
-                className="hover:text-pink-300 cursor-pointer transition-all hover:scale-125"
-              />
-              <Youtube
-                size={16}
-                className="hover:text-red-300 cursor-pointer transition-all hover:scale-125"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Main Navigation */}
-        <nav className="px-4 py-4">
-          <div className="max-w-7xl mx-auto flex justify-between items-center">
-            <div className="flex items-center gap-4">
-              <div className="relative">
-                <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-xl transform hover:scale-110 transition-all duration-300">
-                  <img
-                    src="/logo.png"
-                    alt="Hope Foundation Logo"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                  SCS Globals
-                </h1>
-                <p className="text-xs text-emerald-400 font-medium tracking-wider">
-                  TRANSFORMING LIVES
-                </p>
-              </div>
-            </div>
-
-            {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center gap-8">
-              {[
-                "HOME",
-                "WHO WE ARE",
-                "PROGRAMS",
-                "DONATE",
-                "CONTACT",
-                "BLOGS",
-              ].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-white hover:text-emerald-400 font-medium transition-all duration-300 relative group"
-                >
-                  {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              ))}
-              <button className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-3 rounded-full hover:from-emerald-600 hover:to-teal-600 transition-all transform hover:scale-105 shadow-xl hover:shadow-emerald-500/25 font-medium">
-                Donate Now
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden text-white hover:text-emerald-400 transition-colors"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-emerald-500/20">
-              <div className="px-4 py-6 space-y-4">
-                {[
-                  "HOME",
-                  "WHO WE ARE",
-                  "PROGRAMS",
-                  "DONATE",
-                  "CONTACT",
-                  "BLOGS",
-                ].map((item) => (
-                  <a
-                    key={item}
-                    href="#"
-                    className="block text-white hover:text-emerald-400 font-medium py-2 transition-colors"
-                  >
-                    {item}
-                  </a>
-                ))}
-                <button className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 rounded-full hover:from-emerald-600 hover:to-teal-600 transition-all font-medium">
-                  Donate Now
-                </button>
-              </div>
-            </div>
-          )}
-        </nav>
-      </header>
+     
 
       {/* Hero Section with Slider */}
       <section className="relative h-screen overflow-hidden">
@@ -259,7 +140,6 @@ const NGOWebsite = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-cyan-500/5"></div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
-          
             <h2 className="text-5xl lg:text-7xl font-bold text-white mb-6">
               For Every Child, Women,
               <br />
@@ -461,7 +341,6 @@ const NGOWebsite = () => {
       <section className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-20">
-          
             <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 Empowered India
@@ -742,131 +621,7 @@ const NGOWebsite = () => {
         </div>
       </section>
 
-      {/* Footer Enhanced */}
-      <footer className="bg-gradient-to-br from-gray-900 via-black to-gray-900 border-t border-emerald-500/20">
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          <div className="grid lg:grid-cols-4 gap-12">
-            {/* Logo & About */}
-            <div className="lg:col-span-2 space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-xl transform hover:scale-110 transition-all duration-300">
-                  <img
-                    src="/logo.png"
-                    alt="Hope Foundation Logo"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                <div>
-                  <h3 className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                    SCS Globals
-                  </h3>
-                  <p className="text-emerald-400 font-medium tracking-wider text-sm">
-                    TRANSFORMING LIVES
-                  </p>
-                </div>
-              </div>
-
-              <p className="text-gray-300 leading-relaxed max-w-lg">
-                Dedicated to empowering communities through education,
-                healthcare, and women empowerment programs. Creating sustainable
-                change that lasts for generations.
-              </p>
-
-              <div className="flex gap-4">
-                {[
-                  { icon: Facebook, color: "hover:text-blue-400" },
-                  { icon: Instagram, color: "hover:text-pink-400" },
-                  { icon: Youtube, color: "hover:text-red-400" },
-                  { icon: Mail, color: "hover:text-emerald-400" },
-                ].map((social, index) => (
-                  <button
-                    key={index}
-                    className={`w-12 h-12 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/10 hover:border-emerald-500/30 text-gray-400 ${social.color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
-                  >
-                    <social.icon size={20} />
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-bold text-white">Quick Links</h4>
-              <div className="space-y-3">
-                {[
-                  "About Us",
-                  "Our Programs",
-                  "Success Stories",
-                  "Get Involved",
-                  "Contact",
-                  "Blog",
-                ].map((link) => (
-                  <a
-                    key={link}
-                    href="#"
-                    className="block text-gray-400 hover:text-emerald-400 transition-colors hover:translate-x-2 duration-300"
-                  >
-                    {link}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-bold text-white">Contact Info</h4>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <MapPin className="text-emerald-400 mt-1" size={20} />
-                  <div>
-                    <p className="text-white font-medium">Address</p>
-                    <p className="text-gray-400">New Delhi, India</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Phone className="text-emerald-400 mt-1" size={20} />
-                  <div>
-                    <p className="text-white font-medium">Phone</p>
-                    <p className="text-gray-400">913-457-3859</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Mail className="text-emerald-400 mt-1" size={20} />
-                  <div>
-                    <p className="text-white font-medium">Email</p>
-                    <p className="text-gray-400">info@hopefoundation.org</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Bar */}
-          <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-center md:text-left">
-              © 2024 Hope Foundation. All rights reserved. Made with ❤️ for a
-              better world.
-            </p>
-            <div className="flex gap-6">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-emerald-400 transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-emerald-400 transition-colors"
-              >
-                Terms of Service
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+     
     </div>
   );
 };
