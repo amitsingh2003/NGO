@@ -23,9 +23,9 @@ import {
   MapPin,
   Calendar,
 } from "lucide-react";
+import { Link } from 'react-router-dom';
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 
 const NGOWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,8 +71,6 @@ const NGOWebsite = () => {
 
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
-     
-
       {/* Hero Section with Slider */}
       <section className="relative h-screen overflow-hidden">
         {heroSlides.map((slide, index) => (
@@ -570,7 +568,10 @@ const NGOWebsite = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="group bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-12 py-5 rounded-full hover:from-emerald-600 hover:to-teal-600 transition-all transform hover:scale-105 shadow-2xl hover:shadow-emerald-500/25 font-bold text-lg flex items-center gap-4">
+              <Link
+                to="/donate"
+                className="group bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-12 py-5 rounded-full hover:from-emerald-600 hover:to-teal-600 transition-all transform hover:scale-105 shadow-2xl hover:shadow-emerald-500/25 font-bold text-lg flex items-center gap-4"
+              >
                 <Heart
                   size={24}
                   className="group-hover:scale-110 transition-transform"
@@ -580,9 +581,12 @@ const NGOWebsite = () => {
                   size={20}
                   className="group-hover:translate-x-1 transition-transform"
                 />
-              </button>
+              </Link>
 
-              <button className="group bg-white/10 backdrop-blur-sm text-white px-12 py-5 rounded-full hover:bg-white/20 transition-all border border-white/20 hover:border-white/40 font-bold text-lg flex items-center gap-4">
+              <Link
+                to="/joinus"
+                className="group bg-white/10 backdrop-blur-sm text-white px-12 py-5 rounded-full hover:bg-white/20 transition-all border border-white/20 hover:border-white/40 font-bold text-lg flex items-center gap-4"
+              >
                 <Users
                   size={24}
                   className="group-hover:scale-110 transition-transform"
@@ -592,7 +596,7 @@ const NGOWebsite = () => {
                   size={20}
                   className="group-hover:translate-x-1 transition-transform"
                 />
-              </button>
+              </Link>
             </div>
 
             {/* Impact Numbers */}
@@ -620,8 +624,6 @@ const NGOWebsite = () => {
           </div>
         </div>
       </section>
-
-     
     </div>
   );
 };

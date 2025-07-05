@@ -1,4 +1,3 @@
-
 // Footer Component
 import React from "react";
 import {
@@ -9,8 +8,18 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const menuItems = [
+    { label: "HOME", path: "/" },
+    { label: "WHO WE ARE", path: "/about" },
+    { label: "JOIN US", path: "/joinus" },
+    { label: "DONATE", path: "/donate" },
+    { label: "CONTACT", path: "/contact" },
+    { label: "BLOGS", path: "/blogs" },
+  ];
+
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-black to-gray-900 border-t border-emerald-500/20">
       <div className="max-w-7xl mx-auto px-4 py-16">
@@ -21,7 +30,7 @@ const Footer = () => {
               <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-xl transform hover:scale-110 transition-all duration-300">
                 <img
                   src="/logo.png"
-                  alt="Hope Foundation Logo"
+                  alt="SCS Globals Logo"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -37,9 +46,9 @@ const Footer = () => {
             </div>
 
             <p className="text-gray-300 leading-relaxed max-w-lg">
-              Dedicated to empowering communities through education,
-              healthcare, and women empowerment programs. Creating sustainable
-              change that lasts for generations.
+              Dedicated to empowering communities through education, healthcare,
+              and women empowerment programs. Creating sustainable change that
+              lasts for generations.
             </p>
 
             <div className="flex gap-4">
@@ -63,21 +72,15 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-xl font-bold text-white">Quick Links</h4>
             <div className="space-y-3">
-              {[
-                "About Us",
-                "Our Programs",
-                "Success Stories",
-                "Get Involved",
-                "Contact",
-                "Blog",
-              ].map((link) => (
-                <a
-                  key={link}
-                  href="#"
-                  className="block text-gray-400 hover:text-emerald-400 transition-colors hover:translate-x-2 duration-300"
+              {menuItems.map(({ label, path }) => (
+                <Link
+                  key={label}
+                  to={path}
+                  className="block text-gray-400 hover:text-emerald-400 transition-all duration-300 hover:translate-x-2 relative group"
                 >
-                  {link}
-                </a>
+                  {label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                </Link>
               ))}
             </div>
           </div>
@@ -106,7 +109,7 @@ const Footer = () => {
                 <Mail className="text-emerald-400 mt-1" size={20} />
                 <div>
                   <p className="text-white font-medium">Email</p>
-                  <p className="text-gray-400">info@hopefoundation.org</p>
+                  <p className="text-gray-400">info@scsglobals.org</p>
                 </div>
               </div>
             </div>
@@ -116,22 +119,21 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-center md:text-left">
-            © 2024 Hope Foundation. All rights reserved. Made with ❤️ for a
-            better world.
+            © 2024 SCS Globals - TRANSFORMING LIVES. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a
-              href="#"
+            <Link
+              to="/privacy"
               className="text-gray-400 hover:text-emerald-400 transition-colors"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/terms"
               className="text-gray-400 hover:text-emerald-400 transition-colors"
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

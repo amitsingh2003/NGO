@@ -15,9 +15,9 @@ const JoinUsPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const heroImages = [
-    'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    'https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80',
-    'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+    'https://images.unsplash.com/photo-1650871424238-e2352dad1fff?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1635929114944-8bab23b98e74?q=80&w=1234&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1603623992651-03e9de573dce?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   ];
 
   useEffect(() => {
@@ -127,11 +127,7 @@ const JoinUsPage = () => {
 
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-          <div className="mb-8">
-            <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500 shadow-2xl mb-6 animate-pulse">
-              <UserPlus size={48} className="text-white" />
-            </div>
-          </div>
+         
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
             Your Heart Can

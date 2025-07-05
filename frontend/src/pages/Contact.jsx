@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Send, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
   MessageCircle,
   Heart,
   Users,
-  Globe
+  Globe,
 } from "lucide-react";
 
 const ContactSection = () => {
@@ -16,13 +16,13 @@ const ContactSection = () => {
     organization: "",
     email: "",
     mobile: "",
-    message: ""
+    message: "",
   });
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -36,7 +36,7 @@ const ContactSection = () => {
       organization: "",
       email: "",
       mobile: "",
-      message: ""
+      message: "",
     });
   };
 
@@ -50,43 +50,47 @@ const ContactSection = () => {
       </div>
 
       {/* Section Header */}
-      <div className="relative z-10 pt-20 pb-16 text-center">
+      <div className="relative z-10 pt-40 pb-16 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent mb-6">
             Contact Us
           </h2>
           <p className="text-xl text-gray-300 leading-relaxed">
-            Together, we can create lasting change in communities around the world. 
-            Reach out to learn how you can make a difference.
+            Together, we can create lasting change in communities around the
+            world. Reach out to learn how you can make a difference.
           </p>
         </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          
           {/* Contact Info Card */}
           <div className="relative">
             {/* Background Image with Overlay */}
-            <div 
+            <div
               className="absolute inset-0 rounded-3xl opacity-20"
               style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             ></div>
-            
+
             <div className="relative bg-gradient-to-br from-emerald-900/30 to-teal-900/30 backdrop-blur-xl border border-emerald-500/20 rounded-3xl p-8 shadow-2xl">
               <div className="text-center mb-8">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl mb-4 shadow-xl">
                   <MessageCircle className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Helpdesk Centre</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Helpdesk Centre
+                </h3>
                 <p className="text-emerald-300 text-sm">
-                  We appreciate your feedback. For any queries or suggestions about our initiatives, 
-                  please reach out to us at{" "}
-                  <span className="text-teal-300 font-medium">support@scsglobals.org</span>
+                  We appreciate your feedback. For any queries or suggestions
+                  about our initiatives, please reach out to us at{" "}
+                  <span className="text-teal-300 font-medium">
+                    support@scsglobals.org
+                  </span>
                 </p>
               </div>
 
@@ -96,9 +100,12 @@ const ContactSection = () => {
                     <MapPin className="w-6 h-6 text-emerald-400" />
                   </div>
                   <div>
-                    <h4 className="text-emerald-400 font-semibold mb-1">Office Address</h4>
+                    <h4 className="text-emerald-400 font-semibold mb-1">
+                      Office Address
+                    </h4>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      123 Hope Street, Connaught Place<br />
+                      123 Hope Street, Connaught Place
+                      <br />
                       New Delhi, India - 110001
                     </p>
                   </div>
@@ -109,9 +116,12 @@ const ContactSection = () => {
                     <Phone className="w-6 h-6 text-teal-400" />
                   </div>
                   <div>
-                    <h4 className="text-teal-400 font-semibold mb-1">Contact Number</h4>
+                    <h4 className="text-teal-400 font-semibold mb-1">
+                      Contact Number
+                    </h4>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      +91 913-457-3859<br />
+                      +91 913-457-3859
+                      <br />
                       Available 24/7 for emergency support
                     </p>
                   </div>
@@ -122,10 +132,10 @@ const ContactSection = () => {
                     <Mail className="w-6 h-6 text-cyan-400" />
                   </div>
                   <div>
-                    <h4 className="text-cyan-400 font-semibold mb-1">Email ID</h4>
-                    <p className="text-gray-300 text-sm">
-                      info@scsglobals.org
-                    </p>
+                    <h4 className="text-cyan-400 font-semibold mb-1">
+                      Email ID
+                    </h4>
+                    <p className="text-gray-300 text-sm">info@scsglobals.org</p>
                   </div>
                 </div>
               </div>
@@ -160,22 +170,24 @@ const ContactSection = () => {
           {/* Contact Form */}
           <div className="relative">
             {/* Background Image with Overlay */}
-            <div 
+            <div
               className="absolute inset-0 rounded-3xl opacity-10"
               style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             ></div>
-            
+
             <div className="relative bg-gradient-to-br from-teal-900/30 to-emerald-900/30 backdrop-blur-xl border border-teal-500/20 rounded-3xl p-8 shadow-2xl">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-4">
                   GET IN TOUCH
                 </h3>
                 <p className="text-gray-300">
-                  Ready to make a difference? Send us a message and let's start changing lives together.
+                  Ready to make a difference? Send us a message and let's start
+                  changing lives together.
                 </p>
               </div>
 
@@ -192,7 +204,7 @@ const ContactSection = () => {
                       className="w-full px-4 py-4 bg-black/30 border border-emerald-500/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20 transition-all backdrop-blur-sm"
                     />
                   </div>
-                  
+
                   <div className="relative">
                     <input
                       type="text"
@@ -217,7 +229,7 @@ const ContactSection = () => {
                       className="w-full px-4 py-4 bg-black/30 border border-emerald-500/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20 transition-all backdrop-blur-sm"
                     />
                   </div>
-                  
+
                   <div className="relative">
                     <input
                       type="tel"
@@ -256,25 +268,55 @@ const ContactSection = () => {
 
         {/* Map Section */}
         <div className="mt-16">
-          <div className="relative bg-gradient-to-br from-slate-900/50 to-gray-900/50 backdrop-blur-xl border border-emerald-500/20 rounded-3xl p-2 shadow-2xl overflow-hidden">
-            <div 
-              className="w-full h-96 rounded-2xl"
-              style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
-            >
-              <div className="w-full h-full bg-gradient-to-r from-emerald-900/60 to-teal-900/60 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                <div className="text-center text-white">
-                  <MapPin className="w-16 h-16 mx-auto mb-4 text-emerald-400" />
-                  <h3 className="text-2xl font-bold mb-2">Visit Our Office</h3>
-                  <p className="text-gray-300">123 Hope Street, Connaught Place, New Delhi</p>
-                  <button className="mt-4 px-6 py-2 bg-emerald-500 hover:bg-emerald-600 rounded-lg transition-colors">
-                    Get Directions
-                  </button>
-                </div>
+          <div className="relative bg-gradient-to-br from-slate-900/50 to-gray-900/50 backdrop-blur-xl border border-emerald-500/20 rounded-3xl p-6 shadow-2xl overflow-hidden">
+            <div className="text-center mb-6">
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">
+                Find Us Here
+              </h3>
+              <p className="text-gray-300">
+                Visit our office or get directions to reach us easily
+              </p>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6073757735977!2d77.21772731508153!3d28.613459482431704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2daa9eb4d0b%3A0x717971125923e5d!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1635689455819!5m2!1sen!2sin"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-96 md:h-[450px] rounded-2xl"
+              ></iframe>
+
+              {/* Overlay for better integration */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 via-transparent to-teal-900/20 rounded-2xl"></div>
               </div>
+            </div>
+
+            {/* Quick Info Bar */}
+            <div className="mt-6 flex flex-wrap gap-4 justify-center">
+              <div className="flex items-center gap-2 bg-black/20 px-4 py-2 rounded-xl border border-emerald-500/20">
+                <MapPin className="w-4 h-4 text-emerald-400" />
+                <span className="text-sm text-gray-300">
+                  123 Hope Street, CP, New Delhi
+                </span>
+              </div>
+              <div className="flex items-center gap-2 bg-black/20 px-4 py-2 rounded-xl border border-emerald-500/20">
+                <Phone className="w-4 h-4 text-teal-400" />
+                <span className="text-sm text-gray-300">+91 913-457-3859</span>
+              </div>
+              <a
+                href="https://maps.google.com/?q=Connaught+Place,+New+Delhi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2 rounded-xl hover:from-emerald-600 hover:to-teal-600 transition-all text-white text-sm font-medium"
+              >
+                <Globe className="w-4 h-4" />
+                Get Directions
+              </a>
             </div>
           </div>
         </div>
