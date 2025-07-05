@@ -70,9 +70,9 @@ const NGOWebsite = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black overflow-x-hidden">
+    <div className="min-h-screen bg-black overflow-x-hidden pt-12">
       {/* Hero Section with Slider */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative h-screen overflow-hidden ">
         {heroSlides.map((slide, index) => (
           <div
             key={index}
