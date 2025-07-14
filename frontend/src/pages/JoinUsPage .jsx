@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Users, Heart, Briefcase, UserPlus, MapPin, Calendar, Clock, Globe, HandHeart, Smile, Target } from 'lucide-react';
+import { toast } from 'react-hot-toast';
 
 const JoinUsPage = () => {
   const [selectedForm, setSelectedForm] = useState('volunteer');
@@ -34,19 +35,65 @@ const JoinUsPage = () => {
     });
   };
 
-  const handleSubmit = () => {
-    const requiredFields = ['name', 'email', 'phone', 'message'];
-    const isValid = requiredFields.every(field => formData[field].trim() !== '');
-    
-    if (isValid) {
-      console.log('Form submitted:', { type: selectedForm, data: formData });
-      setFormData({ name: '', email: '', phone: '', message: '', availability: '', skills: '', motivation: '' });
-      alert('Thank you for your heartfelt application! Our team will reach out to you within 48 hours. Together, we can make a difference! 💝');
-    } else {
-      alert('Please fill in all required fields to help us connect with you better.');
-    }
-  };
+// Replace the existing handleSubmit function in your JoinUsPage component with this:
 
+const handleSubmit = async () => {
+  const requiredFields = ['name', 'email', 'phone', 'message'];
+  const isValid = requiredFields.every(field => formData[field].trim() !== '');
+
+  if (!isValid) {
+    toast.error('Please fill in all required fields to help us connect with you better.');
+    return;
+  }
+
+  try {
+    // Show loading state
+    const loadingToast = toast.loading('Submitting your application...');
+
+    const response = await fetch('http://localhost:5000/api/join', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        availability: formData.availability,
+        skills: formData.skills,
+        motivation: formData.motivation,
+        selectedForm: selectedForm // This will be 'volunteer', 'member', or 'intern'
+      })
+    });
+
+    const data = await response.json();
+
+    // Dismiss loading toast
+    toast.dismiss(loadingToast);
+
+    if (data.success) {
+      // Clear form
+      setFormData({ 
+        name: '', 
+        email: '', 
+        phone: '', 
+        message: '', 
+        availability: '', 
+        skills: '', 
+        motivation: '' 
+      });
+
+      toast.success('Thank you for your heartfelt application! We\'ll reach out within 48 hours. 💝');
+    } else {
+      toast.error(data.message || 'Something went wrong. Please try again.');
+    }
+
+  } catch (error) {
+    console.error('Error submitting application:', error);
+    toast.error('Network error. Please check your connection and try again.');
+  }
+};
   const pathways = [
     {
       id: 'volunteer',
@@ -422,7 +469,7 @@ const JoinUsPage = () => {
               );
             })}
           </div>
-        </div>
+        </div>  
       </section>
     </div>
   );
